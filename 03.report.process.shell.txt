@@ -1,0 +1,53 @@
+Tran Ngoc Mai - Bi9.160
+
+Practical 3
+
+1. List all your running processes (ps with more info from man)
+- Command: tranngocmai@BluBluBlu:~$ ps -a | tail
+- Output: 
+ 2378 tty2     00:00:00 deja-dup-monito
+ 6189 tty2     00:00:31 chrome
+ 6739 tty2     00:00:05 chrome
+ 6894 tty2     00:00:04 chrome
+ 7401 tty2     00:00:15 chrome
+ 7417 tty2     00:00:01 chrome
+ 7430 tty2     00:00:03 chrome
+ 7441 tty2     00:00:00 chrome
+ 7493 pts/2    00:00:00 ps
+ 7494 pts/2    00:00:00 bash
+
+2. Start a new process, gnome-calculator for example
+- Command: tranngocmai@BluBluBlu:~$ gnome-calculator
+- Output: the calculator is open.
+
+3. Find process id of your newly-created process (ps with grep)
+- Command: tranngocmai@BluBluBlu:~$ ps ax | grep terminal
+- Output: 
+6500 ?        Ssl    0:11 /usr/lib/gnome-terminal/gnome-terminal-server
+7812 pts/2    S+     0:00 grep --color=auto terminal
+
+4. Show its process status (see content of /proc/<id>/status)
+- Command: tranngocmai@BluBluBlu:~$ cat < /proc/6500/status | tail 
+- Output: 
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	thread vulnerable
+Cpus_allowed:	ff
+Cpus_allowed_list:	0-7
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	40035
+nonvoluntary_ctxt_switches:	936
+
+5. Pause it (kill with signal STOP)
+- Command: tranngocmai@BluBluBlu:~$ kill -STOP 8037
+- Output: nothing happen, the calculator now in sleep mode. 
+
+6. Resume it (kill with signal CONT)
+- Command: tranngocmai@BluBluBlu:~$ kill -CONT 8037
+- Output: the calculator continue process.
+
+7.Terminate it (kill with signal KILL)
+- Command: tranngocmai@BluBluBlu:~$ kill -KILL 8037
+- Output: close the calculator.

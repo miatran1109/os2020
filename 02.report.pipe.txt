@@ -1,0 +1,44 @@
+Tran Ngoc Mai - Bi9.160
+
+Practical 2:
+
+1. List all files in current directory containing «list» in their names (filter with grep)
+- Command: tranngocmai@BluBluBlu:~$ ls /usr/bin | grep 'file'
+- Output: 
+cd-create-profile
+cd-fix-profile
+desktop-file-edit
+desktop-file-install
+desktop-file-validate
+dpkg-distaddfile
+file
+file2brl
+file-roller
+grub-file
+gvfs-monitor-file
+lessfile
+pamfile
+pnmfile
+printer-profile
+
+2. Count how many lines that /etc/passwd has (use wc)
+- Command: tranngocmai@BluBluBlu:~$ wc /etc/passwd
+- Output: 41   69 2422 /etc/passwd
+
+3. Check how much memory that your machine has, not free memory (use free)
+- Command: tranngocmai@BluBluBlu:~$free
+- Output:
+              total        used        free      shared  buff/cache   available
+Mem:       11988428     1798344     8148352      472080     2041732     9436636
+Swap:       1313224           0     1313224 
+
+4. Find how many logical core that your CPU has (see /proc/cpuinfo)
+- Command: tranngocmai@BluBluBlu:~$ cat < /proc/cpuinfo | grep cores
+- Output: 
+	cpu cores	: 2
+
+5. Count how many .jpg files that you have in your photo directory (use find)
+- Command: tranngocmai@BluBluBlu:~$ find . -type f  -exec file {} \; | grep -c -i 'image'
+- Output: 928
+
+

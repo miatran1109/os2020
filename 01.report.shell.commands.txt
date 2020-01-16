@@ -1,0 +1,5 @@
+Tran Ngoc Mai - Bi9.160
+
+Practical 1:
+
+- command: echo hello word 

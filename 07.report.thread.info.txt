@@ -1,0 +1,10 @@
+Practical 7:
+- command: ps -o nlwp 6757
+- resault: NLWP 
+	   34
+
+- command: /proc/<6757>/tasks | grep -c ^d
+- resault: bash: /proc/6757/tasks: No such file or directory
+0
+
+

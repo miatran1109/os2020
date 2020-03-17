@@ -1,0 +1,18 @@
+Practical 5:
+
+- command: cat /proc/sched_debug | grep ".nr_switches" 
+- result: 
+  .nr_switches                   : 13143317
+  .nr_switches                   : 12450918
+  .nr_switches                   : 13897557
+  .nr_switches                   : 13805066
+
+-command: cat /proc/6757/sched | grep "switches"
+- result: 
+nr_switches                                  :               802199
+nr_voluntary_switches                        :               651698
+nr_involuntary_switches                      :               150501
+
+
+
+
